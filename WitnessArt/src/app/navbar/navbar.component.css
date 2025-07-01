@@ -1,0 +1,239 @@
+
+/* Font import (you can import it in your index.html or through Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.clear,.clear1,.clear2,.clear3,.clear4,.clear5,.clear10,.clear20,.clear30,.clear40,.clear50,.clear60,.clear70,.clear80,.clear90,.clear180{
+    font-size: 0;
+    line-height: 0;
+    clear: both;
+}
+
+.clear{height: 0px;}
+.clear1{height: 1px;}
+.clear2{height: 2px;}
+.clear3{height: 3px;}
+.clear4{height: 4px;}
+.clear5{height: 5px;} 
+.clear10{height: 10px;}
+.clear20{height: 20px;}
+.clear30{height: 30px;}
+.clear40{height: 40px;}
+.clear80{height: 80px;}
+.clear200{height: 200px;}
+
+.content{
+    margin-left: 10%;
+    width: 550px;
+    top: 40%;
+    height: 3px;
+    left: 48%;
+    font-size: larger;
+    justify-content: left;
+    color: whitesmoke
+
+}
+
+/* Navbar Custom Height */
+.navbar {
+  padding-top: 3px; /* Further reduce top padding */
+  padding-bottom: 3px; /* Further reduce bottom padding */
+  font-size: 85%; /* Reduce font size slightly more */
+}
+
+.navbar-brand {
+  font-size: 130%; /* Reduce brand font size further */
+}
+
+.navbar-nav .nav-link {
+  padding-top: 4px; /* Adjust padding to reduce space */
+  padding-bottom: 4px; /* Adjust padding to reduce space */
+  font-size: 12px; /* Reduce font size of nav items */
+}
+
+.loginicon, .searchicon, .faceicon{
+  width: 30px; /* Further decrease width of icons */
+  height: 30px; /* Further decrease height of icons */
+}
+
+/* Container for the tooltip text */
+.faceicon {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style for the tooltip text */
+.tooltip-text {
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px;
+    position: absolute;
+    bottom: 100%; /* Position tooltip above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+}
+
+/* Display the tooltip text when hovering over the faceicon */
+.faceicon:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+/* Overlay Text */
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 10;
+}
+
+/* Face Icon Tooltip */
+.faceicon {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  padding: 5px;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000; /* Ensure tooltip appears above the background */
+}
+
+.faceicon:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Style for Navbar Brand */
+.navbar-brand {
+  color: #8a2be2 !important; /* Change text color (blueviolet) */
+  font-size: 2.5rem !important; /* Adjust font size */
+  font-family: 'Lobster', cursive !important; /* Custom font family */
+  font-weight: bold; /* Make text bold */
+  letter-spacing: 1px; /* Optional: Add spacing between letters */
+}
+
+/* Optional: Custom Hover Effects */
+.navbar-brand:hover {
+  color: #6a1b9a !important; /* Change the color when hovering */
+  text-decoration: underline; /* Underline on hover */
+}
+
+
+
+.navbar-nav .nav-link {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+/*.navbar-nav .nav-link:hover {
+  color: #FFD700; /* Hover effect for nav links 
+}*/
+
+.navbar-toggler-icon {
+  background-color: white;
+}
+
+/* Hover Effect on Icons */
+.navbar-nav .nav-link img {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover img {
+  transform: scale(1.1); /* Slight zoom effect */
+  opacity: 0.8;
+}
+
+.search-custom button:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+  opacity: 0.8;
+}
+
+/* Tooltip Style */
+.tooltip-text {
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  padding: 5px;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.faceicon:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+@media (max-width: 767px) {
+    .content {
+      padding-top: 100px; /* Adjust this value as needed */
+      font-size: medium;
+      margin-left: 1%;
+    }
+  
+    .navbar-collapse {
+      position: absolute;
+      top: 80px; /* Adjust this value based on your design */
+      background-color: white;
+      margin-left: 10%;
+    }
+  
+    .navbar-toggler {
+      z-index: 1;
+
+    }
+  }
+
+.carousel-item img{
+  width: 100%;
+  height: 755px;
+  object-fit: cover;
+  z-index: 1000;
+}
+
+/* Custom CSS for animation */
+.carousel-item {
+  transition: all 0.6s ease-in-out;
+}
+
+
+.carousel-item.custom:hover{
+  transform: translateY(100%) !important; 
+  
+  
+}
+
+.carousel-item.next {
+  transform: translateY(-100%) !important;
+  
+}

@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="col-lg">
+                <div class="card ">
+                    <div class="text-center">
+                        <div class="p-3 text-body emphasis">
+                            <h2>Sign Up</h2>
+                        </div>
+                        <p anchor="align-items-center">Create account to access materials</p>
+                        <hr>
+                    </div>
+                    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                            <label class="form-label">UserName</label>
+                            <input formControlName="User_Name" placeholder="Enter Username" type="text" class="form-control" aria-autocomplete="list"><br>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label class="form-label">First Name</label>
+                                <input type="text" formControlName="F_Name" class="form-control" placeholder="First name" aria-label="First name">
+                            </div>
+                            <div class="col">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" formControlName="L_Name" class="form-control" placeholder="Last name" aria-label="Last name"><br>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email Id</label>
+                            <input formControlName="Email_Id" placeholder="Enter Email Id" type="email" class="form-control" id="exampleInputEmail1" aria-autocomplete="list" ><br>
+                        </div>
+                        <div class="md-3">
+                            <label class="form-label">DOB</label>
+                            <input formControlName="dob" type="date" class="form-control" aria-autocomplete="list"><br>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Mobile Number</label>
+                            <input formControlName="Mobile_No" placeholder="Enter Mobile no." type="number" class="form-control" aria-autocomplete="list">
+                        </div>
+                        <div class="row g-3 align-items-center">
+                            <div class="col-auto">
+                                <label class="col-form-label">Password</label>
+                            </div>
+                            <div class="col-auto">
+                                <input formControlName="Password1" placeholder="Enter Password" type="password" class="form-control" id="exampleInputPassword1"><br>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success">SignUp</button><br>
+                    </form>
+                    <a routerLink="/login">Already have account!! Go to login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Image as background -->
+<img src="assets/forensicimg4.jpg" alt="Background Image" class="background-img" />

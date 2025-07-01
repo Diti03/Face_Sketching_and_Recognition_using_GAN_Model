@@ -1,0 +1,60 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.loader {
+  font-size: 1.2em;
+  color: #555;
+}
+
+/* Spinner inside loader */
+.loader::after {
+  content: "";
+  display: block;
+  margin: 10px auto;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db; /* blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.match-grid {
+  display: flex;
+  flex-wrap: nowrap; /* keep 3 images in one line */
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.match-card {
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.match-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+  
+  
+  

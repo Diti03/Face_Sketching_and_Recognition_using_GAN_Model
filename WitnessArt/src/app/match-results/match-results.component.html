@@ -1,0 +1,32 @@
+<div class="container">
+
+  <h2>Face Match Results</h2>
+
+  <!-- Spinner while loading -->
+  <div *ngIf="isLoading" class="loader">
+    Loading match results...
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Match Results (3 images in one line) -->
+  <div *ngIf="!isLoading && !errorMessage && matches.length > 0" class="match-grid">
+
+    <div *ngFor="let match of matches" class="match-card">
+      <img [src]="match.image_url" alt="Matched Face" />
+      <p>Similarity: {{ match.similarity_score * 100 | number:'1.0-2' }}%</p>
+    </div>
+
+  </div>
+
+  <!-- No matches found -->
+  <div *ngIf="!isLoading && !errorMessage && matches.length === 0">
+    No match results found.
+  </div>
+
+</div>
+
+  

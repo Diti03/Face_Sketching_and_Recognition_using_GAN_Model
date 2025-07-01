@@ -1,0 +1,29 @@
+.card{
+    margin-top: 90px;
+    border: 1px solid blue;
+    width: 550px;
+    position: absolute;
+    justify-content: center;
+    padding: 45px;
+    top: 10%;
+    left: 30%;
+    box-sizing: border-box;
+    
+}
+
+@media screen and (max-width:1020px){
+    .card{
+        margin-top: 15px;
+        border: 1px solid blue;
+        width: 350px;
+        height: 500px;
+        position: absolute;
+        padding: 0px;
+        top: 10%;
+        left: 10%;
+        justify-content: center;
+        box-sizing: border-box;
+        align-items: center;
+        
+    }
+}

@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+<div class="login-page">
+    <!-- Background Image -->
+    <img src="assets/forensicimg3.jpg" alt="Background Image" class="background-image">
+    
+    <!-- Overlay -->
+    <div class="overlay"></div>
+    
+    <!-- Login Box -->
+    <div class="login-container">
+        <div class="text-center">
+            <div class="p-3 text-primary emphasis">
+                <h2>Login</h2>
+            </div>
+            <p>Hey! Enter your details to sign in to your account</p>
+            <hr><br>
+        </div>
+        
+        <form [formGroup]="loginFormCustomer" (ngSubmit)="onSubmit()" autocomplete="off">
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label> <!-- Left-aligned label -->
+                <div class="input-icon">
+                    <input formControlName="Email" type="email" id="email" placeholder="elon@gmail.com" class="form-control" autocomplete="off">
+                </div>
+            </div>
+            <br> <!-- Add spacing between Email and Password fields -->
+
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label> <!-- Left-aligned label -->
+                <div class="input-icon">
+                    <input formControlName="Password1" type="password" id="password" class="form-control" autocomplete="off">
+                </div>
+            </div>
+            <br> <!-- Add spacing between Password field and Sign in button -->
+
+            <button type="submit" class="btn btn-primary">Sign in</button>
+            <br><br> <!-- Add spacing between Sign in button and Remember me checkbox -->
+
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="rememberMe">
+                <label class="form-check-label" for="rememberMe">Remember me</label>
+            </div>
+        </form>
+        
+        <br> <!-- Add spacing between Remember me checkbox and links -->
+
+        <div class="links">
+            <a routerLink="/signup">Don't have an account?</a>
+            <span> | </span> <!-- Add a separator between the links -->
+            <a routerLink="/forgot-password">Forgot password?</a>
+        </div>
+    </div>
+</div>

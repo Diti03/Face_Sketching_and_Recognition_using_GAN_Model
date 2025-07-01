@@ -1,0 +1,99 @@
+<app-navbar></app-navbar>
+
+<!--<div class="facesketch-container">
+  Header Section 
+  <header class="facesketch-header">
+    <h1>WitnessArt - Face Sketch Generator</h1>
+    <p>Describe a face, and we will generate a sketch based on your description.</p>
+  </header>
+
+  Face Description Input Section 
+  <section class="face-description">
+    <h3>Provide a Face Description</h3>
+    <textarea
+      id="face-description-input"
+      [(ngModel)]="prompt"
+      placeholder="E.g., A young woman with dark hair and a friendly smile"
+      rows="4"
+      cols="50"
+    ></textarea>
+    <button id="generate-sketch" class="btn-primary" (click)="generateSketch()">Generate Sketch</button>
+  </section>
+
+  Face Sketch Output 
+  <section class="face-sketch-section" *ngIf="sketchGenerated">
+    <div class="sketch-output">
+      <h4>Generated Face Sketch</h4>
+      <div class="sketch-placeholder">
+        <img
+          [src]="sketchUrl"
+          id="sketch-img"
+          alt="Generated Sketch"
+          style="max-width: 300px;"
+        />
+      </div>
+    </div>
+  </section>
+
+  Matching Results Section 
+  <section class="matching-results" *ngIf="matchingSketched">
+    <h4>Matching Results</h4>
+    <div class="sketch-gallery">
+      <div class="sketch-item">
+        <img src="assets/placeholder.jpg" alt="Matching Sketch" />
+        <p>Sketch 1</p>
+      </div>
+      <div class="sketch-item">
+        <img src="assets/placeholder.jpg" alt="Matching Sketch" />
+        <p>Sketch 2</p>
+      </div>
+      <div class="sketch-item">
+        <img src="assets/placeholder.jpg" alt="Matching Sketch" />
+        <p>Sketch 3</p>
+      </div>
+    </div>
+  </section>
+</div>-->
+<div class="container">
+  <h2>Face Sketch Generator</h2>
+  
+  <div class="sketch-form">
+    <textarea [(ngModel)]="prompt" placeholder="Enter your prompt" [disabled]="isLoading"></textarea>
+    <button (click)="generateSketch()" [disabled]="isLoading">
+      {{ isLoading ? 'Generating...' : 'Generate Sketch' }}
+    </button>
+  </div>
+  
+  <div class="result" *ngIf="sketchImage">
+    <img [src]="sketchImage" alt="Generated Sketch">
+  </div>
+  
+  <div class="status" *ngIf="status">
+    {{ status }}
+  </div>
+  
+  <div class="loading" *ngIf="isLoading">
+    <div class="spinner"></div>
+    <p>Please wait while your sketch is being generated...</p>
+  </div>
+
+   <!-- Download button -->
+  <div class="button-container">
+   <button *ngIf="downloadUrl" (click)="downloadImage()">Download Sketch</button>
+  </div>
+
+  <!-- Match Results button -->
+  <div class="button-container">
+    <button *ngIf="showMatchResultsButton"
+            (click)="triggerMatchResults()"
+            [disabled]="isMatchResultsLoading">
+      {{ isMatchResultsLoading ? 'Loading Match Results...' : 'View Match Results' }}
+    </button>
+  </div>
+
+  <!-- Display match-results.component -->
+  <div *ngIf="showMatchResults">
+    <app-match-results *ngIf="showMatchResults" [key]="matchComponentKey"></app-match-results>
+  </div>
+
+</div>
